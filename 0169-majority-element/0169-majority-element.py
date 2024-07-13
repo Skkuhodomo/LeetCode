@@ -1,14 +1,10 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        mean = sum(nums)/len(nums)
-        print(mean)
-        ns = list(set(nums))
-        distance = ((mean-ns[0]))**2
-        m = 0
-        for i in range(len(ns)):
-            if distance >= (mean-ns[i])**2:
-                m = ns[i]
-                distance >= (mean-ns[i])**2
-                
-
-        return m
+        s={}
+        for i in nums:
+            if i in s.keys():
+                s[i]+=1
+            else:
+                s[i]=1
+        majority_key = max(s, key=s.get)
+        return majority_key
