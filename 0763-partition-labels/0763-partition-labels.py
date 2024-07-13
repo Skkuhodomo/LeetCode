@@ -3,7 +3,6 @@ class Solution:
         res = []
         start,end = 0,0
         indexMap = defaultdict(int)
-        # Greedy 알고리즘 활용 .
         for i,c in enumerate(s):
             indexMap[c]=i # 각 문자의 마지막 위치 저장 
         print(indexMap)
