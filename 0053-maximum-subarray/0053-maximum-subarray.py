@@ -1,3 +1,4 @@
+#(Kadane's Algorithm)
 class Solution:
     def maxSubArray(self, nums):
         cur_max, max_till_now = 0, -inf
