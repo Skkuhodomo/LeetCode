@@ -1,16 +1,16 @@
 class Solution:
     def checkValidString(self, s: str) -> bool:
-        leftMin, leftMax = 0, 0
+        left_min, left_max = 0, 0
 
         for c in s:
             if c == "(":
-                leftMin, leftMax = leftMin + 1, leftMax + 1
+                left_min, left_max = left_min + 1, left_max + 1
             elif c == ")":
-                leftMin, leftMax = leftMin - 1, leftMax - 1
+                left_min, left_max = left_min - 1, left_max - 1
             else:
-                leftMin, leftMax = leftMin - 1, leftMax + 1
-            if leftMax < 0:
+                left_min, left_max = left_min - 1, left_max + 1
+            if left_max < 0: # 불가능해지는 것 
                 return False
-            if leftMin < 0:
-                leftMin = 0
-        return leftMin == 0
+            if left_min < 0: # leftMin이 음수가 된다면, (,) 기호 '*'를 왼쪽 것으로 할당하여, left_min = 0 을 만듦.
+                left_min = 0
+        return left_min == 0
