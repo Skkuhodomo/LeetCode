@@ -22,7 +22,7 @@ class Solution:
                 formed += 1
 
             while left <= right and formed == required:
-                c = s[l]
+                c = s[left]
 
                 if ans[0] == -1 or right - left + 1 < ans[0]:
                     ans[0] = right - left + 1
